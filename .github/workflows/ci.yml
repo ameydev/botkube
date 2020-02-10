@@ -7,8 +7,8 @@ jobs:
     runs-on: ubuntu-latest
     env:
       GO111MODULE: on
-      GOPATH: $HOME
-      GOBIN: $HOME/bin
+      GOPATH: /home/runner/work/botkube
+      GOBIN: /home/runner/work/botkube
     steps:
     - name: Checkout
       uses: actions/checkout@v1
@@ -18,6 +18,7 @@ jobs:
         go-version: 1.13
     - name: install golint
       run: |
+        echo $HOME
         go get -u golang.org/x/lint/golint
     - name: Before build
       run: |
